@@ -1,13 +1,14 @@
-import RPi.GPIO as GPIO
+import RPi.GPIO as gp
 import time
+gp.cleanup()
 
 # serigraphie
-GPIO.setmode(GPIO.BOARD)
+gp.setmode(gp.BOARD)
 
 # config les E/S
-GPIO.setup(3, GPIO.OUT, initial = 1)
+gp.setup(3, gp.OUT, initial = 1)
 
 # easy blink
 while True:
-    GPIO.output(3, not GPIO.input(3))
+    gp.output(3, not gp.input(3))
     time.sleep(0.5)
